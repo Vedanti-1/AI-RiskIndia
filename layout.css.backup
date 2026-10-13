@@ -1,0 +1,425 @@
+/* =========================
+   APP LAYOUT
+   ========================= */
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* =========================
+   INDIA AI RISK SIDEBAR
+   ========================= */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  width: 285px;
+  min-width: 285px;
+
+  background: #0d382b;
+  color: #ffffff;
+
+  z-index: var(--z-sidebar);
+
+  display: flex;
+  flex-direction: column;
+
+  transition: transform var(--transition-base);
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  box-sizing: border-box;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Sidebar Brand */
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  padding: 18px 16px 20px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+
+  min-height: 82px;
+
+  box-sizing: border-box;
+}
+
+.sidebar-brand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+
+  background: #dff2e3;
+  color: #17623f;
+
+  border-radius: 50%;
+
+  flex-shrink: 0;
+
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.sidebar-brand-text {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.sidebar-brand-text small {
+  display: block;
+
+  margin-top: 4px;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  line-height: 1.35;
+
+  color: #b9d4c3;
+}
+
+/* Sidebar Navigation */
+
+.sidebar-nav {
+  flex: 1;
+
+  padding: 18px 12px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sidebar-nav-item {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 12px 14px;
+
+  border-radius: 9px;
+
+  color: #d2e4d9;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+
+  cursor: pointer;
+
+  margin-bottom: 5px;
+
+  position: relative;
+
+  text-decoration: none;
+}
+
+.sidebar-nav-item:hover {
+  background: rgba(255, 255, 255, 0.09);
+  color: #ffffff;
+}
+
+.sidebar-nav-item.active {
+  background: #3d7354;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.sidebar-nav-item .icon {
+  width: 21px;
+  height: 21px;
+
+  flex-shrink: 0;
+
+  color: inherit;
+}
+
+.sidebar-nav-item .label {
+  font-size: 14px;
+  font-weight: 550;
+
+  white-space: nowrap;
+}
+
+/* Sidebar Footer */
+
+.sidebar-footer {
+  padding: 16px 18px 18px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+
+  font-size: 11px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  text-align: left;
+
+  line-height: 1.5;
+}
+
+.sidebar-footer div:first-child {
+  color: #c7ddd0;
+  font-weight: 600;
+}
+
+/* Sidebar Scrollbar */
+
+.sidebar-nav::-webkit-scrollbar,
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar-nav::-webkit-scrollbar-track,
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-nav::-webkit-scrollbar-thumb,
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+}
+
+/* =========================
+   MAIN CONTENT
+   ========================= */
+
+.main-content {
+  flex: 1;
+
+  margin-left: 285px;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+.header {
+  position: sticky;
+
+  top: 0;
+
+  z-index: var(--z-header);
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #dfe8e2;
+
+  padding: 0 24px;
+
+  height: 64px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-menu-toggle {
+  display: none;
+
+  background: none;
+  border: none;
+
+  color: #52635a;
+
+  padding: 8px;
+
+  border-radius: 8px;
+
+  transition: background 0.15s ease;
+}
+
+.header-menu-toggle:hover {
+  background: #eef4ef;
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: 650;
+
+  color: #18382a;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.header-badge {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 5px 11px;
+
+  background: #edf7f0;
+
+  color: #28704a;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.header-badge .dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #2e9b5b;
+
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* =========================
+   CONTENT AREA
+   ========================= */
+
+.content {
+  flex: 1;
+
+  padding: 24px;
+
+  background: #f1f6f2;
+}
+
+/* =========================
+   PAGE
+   ========================= */
+
+.page {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.page-header {
+  margin-bottom: 24px;
+}
+
+.page-title {
+  font-size: 28px;
+
+  font-weight: 750;
+
+  color: #17382a;
+
+  margin-bottom: 5px;
+}
+
+.page-subtitle {
+  color: #617168;
+
+  font-size: 14px;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 1024px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .header-menu-toggle {
+    display: flex;
+  }
+
+  .sidebar-overlay {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: rgba(0, 0, 0, 0.40);
+
+    z-index: calc(var(--z-sidebar) - 1);
+
+    display: none;
+  }
+
+  .sidebar-overlay.open {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 16px;
+  }
+
+  .content {
+    padding: 16px;
+  }
+
+  .header-title {
+    font-size: 16px;
+  }
+
+  .header-badge {
+    display: none;
+  }
+
+  .page-title {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 280px;
+    min-width: 280px;
+  }
+
+  .content {
+    padding: 12px;
+  }
+
+  .header {
+    padding: 0 12px;
+    height: 56px;
+  }
+}
